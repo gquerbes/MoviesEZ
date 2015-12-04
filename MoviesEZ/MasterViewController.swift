@@ -16,30 +16,50 @@ class MasterViewController: UITableViewController {
     //array of movies
     var MovieObjectArray = [MovieClass]()
     
+    //function to create moives from JSON data
     func createMovies()->[MovieClass]{
         var moviesArray = [MovieClass]()
         
         //URL of JSON DATA
         let dataURL: NSURL = NSURL(string:"http://api.themoviedb.org/3/movie/popular?api_key=ff743742b3b6c89feb59dfc138b4c12f")!
         
-        
-    
-        
+        // JSON data set to NSData
         let jsonURLData = NSData(contentsOfURL:dataURL)
+        
         
         if(jsonURLData != nil){
             
             let aDictionary: NSDictionary =
             //NSJSONSerialization converts NSData from one type to another
             (try! NSJSONSerialization.JSONObjectWithData(jsonURLData!, options: NSJSONReadingOptions.MutableContainers))as! NSDictionary
-            print("wtf")
+            
             print(aDictionary)
             
+            //grab JSON data of all Movies
+            let movieList = aDictionary["results"]as![[String:AnyObject]]
+            
+            
+            //loop through all items in list
+            
+            for index in 1...movieList.count{
+                
+                var singleMovie = movieList[index - 1]
+                
+                //pull data from single movie and set to individual variables
+                let mTitle = singleMovie["title"]! as? String
+                let mDesritpion = singleMovie["overview"]! as? String
+                let mPosterPath = singleMovie["poster_path"]! as? String
+                
+                // initialize new movie
+                let mov1 = MovieClass(title: mTitle!, posterURL: mDesritpion!, description: mPosterPath!)
+                
+                //append to array
+                moviesArray.append(mov1)
+                
+            }
+    
+            
         }
-        else {
-          print("fuck")  
-        }
-        
         
         return moviesArray
     }
