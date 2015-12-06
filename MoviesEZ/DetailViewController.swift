@@ -13,11 +13,21 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
     
+    @IBOutlet weak var lblDescription: UITextView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblRating: UILabel!
-    @IBOutlet weak var lblMovieDescription: UILabel!
     @IBOutlet weak var imgPoster: UIImageView!
     @IBOutlet weak var lblReleaseDate: UILabel!
+    @IBAction func btnSearch(sender: AnyObject) {
+        let app = UIApplication.sharedApplication()
+        let searchTerm:String = (detailItem!.title)
+        //remove the spaces from search term and replace with + symbol so google search can process correctly
+        let newterm = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        //search IMDB using google's "i'm feeling lucky" feature
+        let finalUrl = "http://www.google.com/search?q=\(newterm)+IMDB&btnI"
+        let urlw = NSURL(string: finalUrl)
+        app.openURL(urlw!)
+    }
 
     var detailItem: MovieClass? {
         didSet {
@@ -50,12 +60,15 @@ class DetailViewController: UIViewController {
         //set background color
         //self.view.backgroundColor =  UIColor(red:192/255.0, green: 192/255.0, blue: 192/255.0, alpha:1.0)
         let colors = ColorStruct()
-        self.view.backgroundColor=colors.getRandomColor()
+        let randColor = colors.getRandomColor()
+        self.view.backgroundColor = randColor
+        
         
         //show movie description
-        lblMovieDescription.text = self.detailItem?.description
-        
-        //set title of moive
+        lblDescription.text = self.detailItem?.description
+         //force label to show from top
+        lblDescription.scrollRangeToVisible(NSMakeRange(0, 0))
+        //set title of movie
         lblTitle.text = self.detailItem!.title
         
        
