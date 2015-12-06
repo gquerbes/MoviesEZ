@@ -15,12 +15,12 @@ class MovieClass{
     var posterURL: String = ""
     var description: String = ""
     var releaseDate: String = ""
-    var rating: Int = -9
+    var rating: Double = -9
     let URL_BASE = "http://image.tmdb.org/t/p/w500"
     
     
     
-    init(title:String, posterURL: String, description:String,releaseDate:String,rating:Int){
+    init(title:String, posterURL: String, description:String,releaseDate:String,rating:Double){
         self.title = title
         self.description = description
         self.posterURL = "\(URL_BASE)\(posterURL)"

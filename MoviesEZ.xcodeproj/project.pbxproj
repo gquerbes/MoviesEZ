@@ -13,6 +13,7 @@
 		7435915B1C1141E800BEC63B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 743591591C1141E800BEC63B /* Main.storyboard */; };
 		7435915D1C1141E800BEC63B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7435915C1C1141E800BEC63B /* Assets.xcassets */; };
 		743591601C1141E800BEC63B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435915E1C1141E800BEC63B /* LaunchScreen.storyboard */; };
+		74A743721C13FC1900B105FD /* ColorStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A743711C13FC1800B105FD /* ColorStruct.swift */; };
 		74B342931C1142E500C76498 /* MovieClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B342921C1142E500C76498 /* MovieClass.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		7435915C1C1141E800BEC63B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7435915F1C1141E800BEC63B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		743591611C1141E800BEC63B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74A743711C13FC1800B105FD /* ColorStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStruct.swift; sourceTree = "<group>"; };
 		74B342921C1142E500C76498 /* MovieClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 				741C21F51C13C448006AC574 /* DetailViewController.swift */,
 				74B342921C1142E500C76498 /* MovieClass.swift */,
 				743591591C1141E800BEC63B /* Main.storyboard */,
+				74A743711C13FC1800B105FD /* ColorStruct.swift */,
 				7435915C1C1141E800BEC63B /* Assets.xcassets */,
 				7435915E1C1141E800BEC63B /* LaunchScreen.storyboard */,
 				743591611C1141E800BEC63B /* Info.plist */,
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A743721C13FC1900B105FD /* ColorStruct.swift in Sources */,
 				74B342931C1142E500C76498 /* MovieClass.swift in Sources */,
 				743591561C1141E800BEC63B /* MasterViewController.swift in Sources */,
 				743591541C1141E800BEC63B /* AppDelegate.swift in Sources */,

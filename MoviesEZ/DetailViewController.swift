@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
     
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblRating: UILabel!
     @IBOutlet weak var lblMovieDescription: UILabel!
     @IBOutlet weak var imgPoster: UIImageView!
@@ -47,10 +48,15 @@ class DetailViewController: UIViewController {
         
         
         //set background color
-        self.view.backgroundColor =  UIColor(red:192/255.0, green: 192/255.0, blue: 192/255.0, alpha:1.0)
+        //self.view.backgroundColor =  UIColor(red:192/255.0, green: 192/255.0, blue: 192/255.0, alpha:1.0)
+        let colors = ColorStruct()
+        self.view.backgroundColor=colors.getRandomColor()
         
         //show movie description
         lblMovieDescription.text = self.detailItem?.description
+        
+        //set title of moive
+        lblTitle.text = self.detailItem!.title
         
        
         

@@ -50,7 +50,7 @@ class MasterViewController: UITableViewController {
                 let mDesritpion = singleMovie["overview"]! as? String
                 let mPosterPath = singleMovie["poster_path"]! as? String
                 let mReleaseDate = singleMovie["release_date"]! as? String
-                let mRating = singleMovie["vote_average"]! as? Int
+                let mRating = singleMovie["vote_average"]! as? Double
                 
                 // initialize new movie
                 let mov1 = MovieClass(title: mTitle!, posterURL: mPosterPath!, description: mDesritpion!,releaseDate: mReleaseDate!, rating: mRating!)
@@ -120,14 +120,32 @@ class MasterViewController: UITableViewController {
         //main label will show name of movie
         cell.textLabel!.text = object.title
         
+        //detail label will show address
+        cell.detailTextLabel!.text = String (object.rating)
        
         
+        //set image on the table view
+ 
+        let url = NSURL(string: object.posterURL)!
+            
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)){
+                
+            let data = NSData(contentsOfURL: url)!
+            
+            dispatch_async(dispatch_get_main_queue()){
+                let img = UIImage(data:data)
+                 
+                cell.imageView?.image = img
+                }
+            
+            }
         return cell
+        
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return false
     }
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
