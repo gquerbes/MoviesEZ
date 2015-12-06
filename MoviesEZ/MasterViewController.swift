@@ -120,8 +120,8 @@ class MasterViewController: UITableViewController {
         //main label will show name of movie
         cell.textLabel!.text = object.title
         
-        //detail label will show address
-        cell.detailTextLabel!.text = String (object.rating)
+        //detail label will show address. cast to int to remove decimal.
+        cell.detailTextLabel!.text = "Avg Rating: \(String (Int (object.rating)))/10"
        
         
         //set image on the table view
