@@ -49,9 +49,11 @@ class MasterViewController: UITableViewController {
                 let mTitle = singleMovie["title"]! as? String
                 let mDesritpion = singleMovie["overview"]! as? String
                 let mPosterPath = singleMovie["poster_path"]! as? String
+                let mReleaseDate = singleMovie["release_date"]! as? String
+                let mRating = singleMovie["vote_average"]! as? Int
                 
                 // initialize new movie
-                let mov1 = MovieClass(title: mTitle!, posterURL: mDesritpion!, description: mPosterPath!)
+                let mov1 = MovieClass(title: mTitle!, posterURL: mPosterPath!, description: mDesritpion!,releaseDate: mReleaseDate!, rating: mRating!)
                 
                 //append to array
                 moviesArray.append(mov1)
@@ -81,20 +83,20 @@ class MasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func insertNewObject(sender: AnyObject) {
-        objects.insert(NSDate(), atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-    }
+//    func insertNewObject(sender: AnyObject) {
+//        objects.insert(NSDate(), atIndex: 0)
+//        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+//        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+//    }
 
     
     // MARK: - Segues
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
+                let selectedMovie = MovieObjectArray[indexPath.row] as MovieClass
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
+                controller.detailItem = selectedMovie
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -108,14 +110,18 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return MovieObjectArray.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        let object = MovieObjectArray[indexPath.row] as MovieClass
+        //main label will show name of movie
+        cell.textLabel!.text = object.title
+        
+       
+        
         return cell
     }
 
