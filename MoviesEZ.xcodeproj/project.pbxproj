@@ -15,6 +15,7 @@
 		743591601C1141E800BEC63B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435915E1C1141E800BEC63B /* LaunchScreen.storyboard */; };
 		74A743721C13FC1900B105FD /* ColorStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A743711C13FC1800B105FD /* ColorStruct.swift */; };
 		74B342931C1142E500C76498 /* MovieClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B342921C1142E500C76498 /* MovieClass.swift */; };
+		74F025511C15606500B11983 /* logoLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = 74F025501C15606500B11983 /* logoLarge.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		743591611C1141E800BEC63B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74A743711C13FC1800B105FD /* ColorStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStruct.swift; sourceTree = "<group>"; };
 		74B342921C1142E500C76498 /* MovieClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieClass.swift; sourceTree = "<group>"; };
+		74F025501C15606500B11983 /* logoLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoLarge.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				743591531C1141E800BEC63B /* AppDelegate.swift */,
 				743591551C1141E800BEC63B /* MasterViewController.swift */,
 				741C21F51C13C448006AC574 /* DetailViewController.swift */,
+				74F025501C15606500B11983 /* logoLarge.png */,
 				74B342921C1142E500C76498 /* MovieClass.swift */,
 				743591591C1141E800BEC63B /* Main.storyboard */,
 				74A743711C13FC1800B105FD /* ColorStruct.swift */,
@@ -135,6 +138,7 @@
 				743591601C1141E800BEC63B /* LaunchScreen.storyboard in Resources */,
 				7435915D1C1141E800BEC63B /* Assets.xcassets in Resources */,
 				7435915B1C1141E800BEC63B /* Main.storyboard in Resources */,
+				74F025511C15606500B11983 /* logoLarge.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
