@@ -70,7 +70,7 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         MovieObjectArray =  createMovies()
-        
+    
     }
 
     override func viewWillAppear(animated: Bool) {

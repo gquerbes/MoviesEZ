@@ -58,6 +58,7 @@ class DetailViewController: UIViewController {
         
         
         //set background color
+        //self.view.backgroundColor =  UIColor(red:192/255.0, green: 192/255.0, blue: 192/255.0, alpha:1.0)
         let colors = ColorStruct()
         let randColor = colors.getRandomColor()
         self.view.backgroundColor = randColor
